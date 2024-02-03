@@ -21,6 +21,9 @@ RUN chmod +x /agent/Agent && \
   chmod +x /agent/agent-reset-local-login.sh && \
   chmod +x /agent/run
 
+RUN ["apt-get", "update"]
+RUN ["apt-get", "install", "vim"]
+
 # Define default environment variables
 ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Fix a memory leak on encoded recording
